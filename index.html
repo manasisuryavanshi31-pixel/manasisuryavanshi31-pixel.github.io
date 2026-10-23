@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>Manasi Suryavanshi | Data Portfolio</title>
+  <meta name="description" content="Manasi Bhanudas Suryavanshi's portfolio in Data Analytics and Healthcare Analytics.">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a30;
+      --cyan: #57e7f5;
+      --lavender: #b9a3ff;
+      --text: #f4f5ff;
+      --muted: #a6b0c8;
+      --border: #293550;
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: min(1080px, 90%); margin: auto; }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo { color: var(--cyan); font-weight: 800; letter-spacing: 2px; }
+
+    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--cyan); }
+
+    .hero {
+      padding: 95px 0 75px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 68px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin: 20px 0;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, var(--cyan), var(--lavender));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p { max-width: 640px; color: var(--muted); font-size: 17px; }
+
+    .buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+
+    .btn {
+      display: inline-block;
+      border: 1px solid var(--cyan);
+      border-radius: 8px;
+      padding: 11px 18px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .btn.primary { background: var(--cyan); color: #08101d; }
+    .btn:hover { transform: translateY(-2px); }
+
+    .orb {
+      position: absolute;
+      right: 3%;
+      top: 95px;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      border: 1px solid #57e7f550;
+      box-shadow: 0 0 70px #57e7f515, inset 0 0 50px #b9a3ff12;
+      pointer-events: none;
+    }
+
+    .orb::before, .orb::after {
+      content: "";
+      position: absolute;
+      border: 1px solid #b9a3ff65;
+      border-radius: 50%;
+      inset: 24px;
+    }
+
+    .orb::after { inset: 53px; border-color: #57e7f590; }
+
+    section { padding: 58px 0; }
+
+    .section-label {
+      color: var(--cyan);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h2 { font-size: clamp(26px, 4vw, 38px); margin: 8px 0 12px; }
+    .section-intro { color: var(--muted); max-width: 680px; margin-bottom: 28px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #141d34, #10172a);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .card:hover { transform: translateY(-4px); border-color: var(--cyan); }
+
+    .tag {
+      display: inline-block;
+      color: var(--lavender);
+      background: #b9a3ff15;
+      border: 1px solid #b9a3ff35;
+      padding: 4px 9px;
+      border-radius: 20px;
+      font-size: 11px;
+      margin: 0 5px 8px 0;
+    }
+
+    .card h3 { margin: 9px 0; font-size: 19px; }
+    .card p { color: var(--muted); font-size: 14px; }
+    .card a { color: var(--cyan); font-size: 13px; font-weight: bold; }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 12px 17px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--panel);
+      color: var(--text);
+    }
+
+    .skill small { color: var(--muted); }
+
+    .about-box {
+      border-left: 3px solid var(--lavender);
+      padding: 5px 0 5px 22px;
+      color: var(--muted);
+      max-width: 750px;
+    }
+
+    .contact {
+      background: linear-gradient(120deg, #121a30, #17172f);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      padding: 25px 0;
+      font-size: 12px;
+    }
+
+    @media (max-width: 650px) {
+      .grid { grid-template-columns: 1fr; }
+      .orb { opacity: .22; width: 125px; height: 125px; right: -25px; top: 65px; }
+      .hero { padding-top: 70px; }
+      .nav-links { gap: 12px; }
+      nav { align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#">MANASI S.</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="orb"></div>
+      <div class="eyebrow">Data Analytics · Healthcare Analytics</div>
+      <h1>MANASI BHANUDAS<br><span>SURYAVANSHI</span></h1>
+      <p>
+        Computer Science Engineering student exploring data, building dashboards,
+        and learning how meaningful insights can support better decisions.
+      </p>
+      <div class="buttons">
+        <a class="btn primary" href="#projects">Explore my projects ↘</a>
+        <a class="btn" href="https://github.com/manasisuryavanshi31-pixel" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="section-label">01 / About me</div>
+      <h2>Curious about data.<br>Focused on learning.</h2>
+      <div class="about-box">
+        I am a Computer Science Engineering student developing my skills in
+        data analysis and data visualization. I enjoy organizing data, exploring
+        patterns, and presenting information through dashboards. I am also
+        exploring applications of analytics in healthcare and pharmacy.
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-label">02 / Selected work</div>
+      <h2>Projects & explorations</h2>
+      <p class="section-intro">
+        Work across two domains. Open the available project repositories below;
+        other project links can be added as they are published.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Healthcare Analytics</span>
+          <span class="tag">Excel</span>
+          <h3>Healthcare Data Governance & Cleaning</h3>
+          <p>
+            A workbook exploring healthcare data cleaning, validation,
+            a data dictionary, and an exception log.
+          </p>
+          <a href="https://github.com/manasisuryavanshi31-pixel/Healthcare-Data-Governance-Cleaning-Copy"
+             target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a>
+        </article>
+
+        <article class="card">
+          <span class="tag">Data Analytics</span>
+          <span class="tag">Exploratory Analysis</span>
+          <h3>Data Quality & Exploratory Analysis</h3>
+          <p>
+            Data quality and exploratory analysis work. A public project link
+            can be added here when available.
+          </p>
+          <span class="tag">Project link to add</span>
+        </article>
+
+        <article class="card">
+          <span class="tag">Data Analytics</span>
+          <span class="tag">Power BI</span>
+          <h3>Business KPI Dashboard</h3>
+          <p>
+            A dashboard project focused on presenting business performance
+            indicators in a clear visual format.
+          </p>
+          <span class="tag">Project link to add</span>
+        </article>
+
+        <article class="card">
+          <span class="tag">Healthcare Analytics</span>
+          <span class="tag">Dashboard</span>
+          <h3>Pharmacy Performance Dashboard</h3>
+          <p>
+            A healthcare-domain project exploring pharmacy performance
+            through data and visual reporting.
+          </p>
+          <span class="tag">Project link to add</span>
+        </article>
+
+        <article class="card">
+          <span class="tag">Data Analytics</span>
+          <span class="tag">Power BI</span>
+          <h3>Student Performance Dashboard</h3>
+          <p>
+            A student-data visualization project designed to make performance
+            patterns easier to explore.
+          </p>
+          <span class="tag">Project link to add</span>
+        </article>
+
+        <article class="card">
+          <span class="tag">Healthcare Analytics</span>
+          <span class="tag">Research & Insights</span>
+          <h3>Adverse Event Signal Exploration</h3>
+          <p>
+            A healthcare analytics project exploring adverse-event data
+            and potential patterns.
+          </p>
+          <span class="tag">Project link to add</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-label">03 / My toolkit</div>
+      <h2>Skills in progress</h2>
+      <p class="section-intro">Building a strong foundation, one project at a time.</p>
+      <div class="skills">
+        <div class="skill">Excel <small>· Practicing</small></div>
+        <div class="skill">Power BI <small>· Beginner</small></div>
+        <div class="skill">SQL <small>· Learning</small></div>
+        <div class="skill">Python <small>· Learning</small></div>
+        <div class="skill">Data Cleaning</div>
+        <div class="skill">Data Visualization</div>
+        <div class="skill">Exploratory Analysis</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-label">04 / Get in touch</div>
+      <div class="contact">
+        <h2>Let's connect.</h2>
+        <p class="section-intro">
+          Interested in data analytics, visualization, and opportunities to learn
+          through real projects.
+        </p>
+        <a class="btn primary" href="https://github.com/manasisuryavanshi31-pixel"
+           target="_blank" rel="noopener noreferrer">Visit my GitHub ↗</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Manasi Bhanudas Suryavanshi · Built with curiosity and data.
+    </footer>
+  </div>
+</body>
+</html>
