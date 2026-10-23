@@ -3,10 +3,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1020">
-  <title>Manasi Suryavanshi | Data Portfolio</title>
-  <meta name="description" content="Manasi Bhanudas Suryavanshi's portfolio in Data Analytics and Healthcare Analytics.">
+  <meta name="description" content="Portfolio of Manasi Bhanudas Suryavanshi, a Computer Science student learning Data Analytics, Power BI, SQL and Healthcare Analytics.">
+  <title>Manasi Suryavanshi | Data Analytics Portfolio</title>
+
   <style>
     :root {
       --bg: #0b1020;
@@ -18,7 +19,10 @@
       --border: #293550;
     }
 
-    * { box-sizing: border-box; scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -28,9 +32,20 @@
       line-height: 1.7;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .container { width: min(1080px, 90%); margin: auto; }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
 
     nav {
       display: flex;
@@ -41,22 +56,38 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .logo { color: var(--cyan); font-weight: 800; letter-spacing: 2px; }
+    .logo {
+      color: var(--cyan);
+      font-weight: 800;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
 
-    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
-    .nav-links a { color: var(--muted); font-size: 14px; }
-    .nav-links a:hover { color: var(--cyan); }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
 
     .hero {
-      padding: 95px 0 75px;
+      padding: 90px 0 75px;
       position: relative;
       overflow: hidden;
     }
 
-    .eyebrow {
+    .eyebrow, .section-label {
       color: var(--cyan);
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       font-size: 12px;
       font-weight: bold;
     }
@@ -75,55 +106,86 @@
       color: transparent;
     }
 
-    .hero p { max-width: 640px; color: var(--muted); font-size: 17px; }
+    .hero p, .section-intro {
+      color: var(--muted);
+      max-width: 690px;
+    }
 
-    .buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+    .hero p {
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
 
     .btn {
       display: inline-block;
       border: 1px solid var(--cyan);
       border-radius: 8px;
-      padding: 11px 18px;
+      padding: 10px 17px;
       font-weight: bold;
       font-size: 14px;
+      transition: transform .2s, background .2s;
     }
 
-    .btn.primary { background: var(--cyan); color: #08101d; }
-    .btn:hover { transform: translateY(-2px); }
+    .btn.primary {
+      background: var(--cyan);
+      color: #08101d;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
     .orb {
       position: absolute;
-      right: 3%;
-      top: 95px;
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
+      right: 4%;
+      top: 100px;
+      width: 180px;
+      height: 180px;
       border: 1px solid #57e7f550;
-      box-shadow: 0 0 70px #57e7f515, inset 0 0 50px #b9a3ff12;
+      border-radius: 50%;
+      box-shadow: 0 0 65px #57e7f515, inset 0 0 45px #b9a3ff12;
       pointer-events: none;
     }
 
     .orb::before, .orb::after {
       content: "";
       position: absolute;
+      inset: 25px;
       border: 1px solid #b9a3ff65;
       border-radius: 50%;
-      inset: 24px;
     }
 
-    .orb::after { inset: 53px; border-color: #57e7f590; }
-
-    section { padding: 58px 0; }
-
-    .section-label {
-      color: var(--cyan);
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+    .orb::after {
+      inset: 52px;
+      border-color: #57e7f590;
     }
 
-    h2 { font-size: clamp(26px, 4vw, 38px); margin: 8px 0 12px; }
-    .section-intro { color: var(--muted); max-width: 680px; margin-bottom: 28px; }
+    section {
+      padding: 55px 0;
+    }
+
+    h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      line-height: 1.25;
+      margin: 10px 0;
+    }
+
+    .section-intro {
+      margin-bottom: 28px;
+    }
+
+    .about-box {
+      border-left: 3px solid var(--lavender);
+      padding: 5px 0 5px 22px;
+      color: var(--muted);
+      max-width: 780px;
+    }
 
     .grid {
       display: grid;
@@ -135,26 +197,72 @@
       background: linear-gradient(145deg, #141d34, #10172a);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 24px;
+      padding: 23px;
       transition: transform .2s, border-color .2s;
     }
 
-    .card:hover { transform: translateY(-4px); border-color: var(--cyan); }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--cyan);
+    }
 
     .tag {
       display: inline-block;
       color: var(--lavender);
       background: #b9a3ff15;
       border: 1px solid #b9a3ff35;
-      padding: 4px 9px;
+      padding: 3px 9px;
       border-radius: 20px;
       font-size: 11px;
-      margin: 0 5px 8px 0;
+      margin: 0 5px 7px 0;
     }
 
-    .card h3 { margin: 9px 0; font-size: 19px; }
-    .card p { color: var(--muted); font-size: 14px; }
-    .card a { color: var(--cyan); font-size: 13px; font-weight: bold; }
+    .card h3 {
+      font-size: 19px;
+      line-height: 1.4;
+      margin: 10px 0;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .project-link {
+      color: var(--cyan);
+      font-weight: bold;
+      font-size: 13px;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 22px 0;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--panel);
+      color: var(--text);
+      padding: 8px 14px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .filter-btn[aria-pressed="true"] {
+      background: var(--cyan);
+      border-color: var(--cyan);
+      color: #08101d;
+      font-weight: bold;
+    }
 
     .skills {
       display: flex;
@@ -163,20 +271,38 @@
     }
 
     .skill {
-      padding: 12px 17px;
+      padding: 12px 16px;
       border: 1px solid var(--border);
       border-radius: 9px;
       background: var(--panel);
-      color: var(--text);
     }
 
-    .skill small { color: var(--muted); }
-
-    .about-box {
-      border-left: 3px solid var(--lavender);
-      padding: 5px 0 5px 22px;
+    .skill small {
       color: var(--muted);
-      max-width: 750px;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .journey-item {
+      padding: 20px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .journey-item h3 {
+      font-size: 16px;
+      margin-top: 0;
+    }
+
+    .journey-item p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 0;
     }
 
     .contact {
@@ -190,166 +316,374 @@
       border-top: 1px solid var(--border);
       color: var(--muted);
       text-align: center;
-      padding: 25px 0;
+      padding: 24px 0;
       font-size: 12px;
     }
 
-    @media (max-width: 650px) {
-      .grid { grid-template-columns: 1fr; }
-      .orb { opacity: .22; width: 125px; height: 125px; right: -25px; top: 65px; }
-      .hero { padding-top: 70px; }
-      .nav-links { gap: 12px; }
-      nav { align-items: flex-start; }
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 700px) {
+      .grid, .journey {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+
+      .orb {
+        opacity: .2;
+        width: 120px;
+        height: 120px;
+        right: -25px;
+        top: 50px;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <nav>
-      <a class="logo" href="#">MANASI S.</a>
+
+    <nav aria-label="Main navigation">
+      <a class="logo" href="#home">MANASI S.</a>
+
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        <a href="#journey">Learning</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
 
-    <header class="hero">
-      <div class="orb"></div>
+    <header class="hero" id="home">
+      <div class="orb" aria-hidden="true"></div>
+
       <div class="eyebrow">Data Analytics · Healthcare Analytics</div>
-      <h1>MANASI BHANUDAS<br><span>SURYAVANSHI</span></h1>
+
+      <h1>
+        MANASI BHANUDAS<br>
+        <span>SURYAVANSHI</span>
+      </h1>
+
       <p>
-        Computer Science Engineering student exploring data, building dashboards,
-        and learning how meaningful insights can support better decisions.
+        Computer Science Engineering student learning data analysis,
+        data visualization, and healthcare analytics. I enjoy exploring
+        data, building dashboards, and developing practical projects.
       </p>
+
       <div class="buttons">
-        <a class="btn primary" href="#projects">Explore my projects ↘</a>
-        <a class="btn" href="https://github.com/manasisuryavanshi31-pixel" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+        <a class="btn primary" href="#projects">Explore Projects ↘</a>
+
+        <a class="btn"
+           href="https://www.linkedin.com/in/manasi-suryavanshi-6b63b6390/"
+           target="_blank" rel="noopener noreferrer">
+          LinkedIn Profile ↗
+        </a>
+
+        <a class="btn"
+           href="https://github.com/manasisuryavanshi31-pixel"
+           target="_blank" rel="noopener noreferrer">
+          GitHub Profile ↗
+        </a>
       </div>
     </header>
 
-    <section id="about">
-      <div class="section-label">01 / About me</div>
-      <h2>Curious about data.<br>Focused on learning.</h2>
-      <div class="about-box">
-        I am a Computer Science Engineering student developing my skills in
-        data analysis and data visualization. I enjoy organizing data, exploring
-        patterns, and presenting information through dashboards. I am also
-        exploring applications of analytics in healthcare and pharmacy.
-      </div>
-    </section>
+    <main>
+      <section id="about">
+        <div class="section-label">01 / About Me</div>
+        <h2>Curious about data.<br>Focused on learning.</h2>
 
-    <section id="projects">
-      <div class="section-label">02 / Selected work</div>
-      <h2>Projects & explorations</h2>
-      <p class="section-intro">
-        Work across two domains. Open the available project repositories below;
-        other project links can be added as they are published.
-      </p>
+        <div class="about-box">
+          I am a Computer Science Engineering student at Sharad Institute
+          of Technology College of Engineering. I am developing my skills
+          in data analytics, data visualization, and working with data.
+          I am particularly interested in using analytics to understand
+          business performance and healthcare-related information.
 
-      <div class="grid">
-        <article class="card">
-          <span class="tag">Healthcare Analytics</span>
-          <span class="tag">Excel</span>
-          <h3>Healthcare Data Governance & Cleaning</h3>
-          <p>
-            A workbook exploring healthcare data cleaning, validation,
-            a data dictionary, and an exception log.
-          </p>
-          <a href="https://github.com/manasisuryavanshi31-pixel/Healthcare-Data-Governance-Cleaning-Copy"
-             target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a>
-        </article>
+          My portfolio reflects my learning journey, project work, and
+          continued efforts to improve my technical skills.
+        </div>
+      </section>
 
-        <article class="card">
-          <span class="tag">Data Analytics</span>
-          <span class="tag">Exploratory Analysis</span>
-          <h3>Data Quality & Exploratory Analysis</h3>
-          <p>
-            Data quality and exploratory analysis work. A public project link
-            can be added here when available.
-          </p>
-          <span class="tag">Project link to add</span>
-        </article>
+      <section id="projects">
+        <div class="section-label">02 / Selected Work</div>
+        <h2>Projects & Explorations</h2>
 
-        <article class="card">
-          <span class="tag">Data Analytics</span>
-          <span class="tag">Power BI</span>
-          <h3>Business KPI Dashboard</h3>
-          <p>
-            A dashboard project focused on presenting business performance
-            indicators in a clear visual format.
-          </p>
-          <span class="tag">Project link to add</span>
-        </article>
-
-        <article class="card">
-          <span class="tag">Healthcare Analytics</span>
-          <span class="tag">Dashboard</span>
-          <h3>Pharmacy Performance Dashboard</h3>
-          <p>
-            A healthcare-domain project exploring pharmacy performance
-            through data and visual reporting.
-          </p>
-          <span class="tag">Project link to add</span>
-        </article>
-
-        <article class="card">
-          <span class="tag">Data Analytics</span>
-          <span class="tag">Power BI</span>
-          <h3>Student Performance Dashboard</h3>
-          <p>
-            A student-data visualization project designed to make performance
-            patterns easier to explore.
-          </p>
-          <span class="tag">Project link to add</span>
-        </article>
-
-        <article class="card">
-          <span class="tag">Healthcare Analytics</span>
-          <span class="tag">Research & Insights</span>
-          <h3>Adverse Event Signal Exploration</h3>
-          <p>
-            A healthcare analytics project exploring adverse-event data
-            and potential patterns.
-          </p>
-          <span class="tag">Project link to add</span>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="section-label">03 / My toolkit</div>
-      <h2>Skills in progress</h2>
-      <p class="section-intro">Building a strong foundation, one project at a time.</p>
-      <div class="skills">
-        <div class="skill">Excel <small>· Practicing</small></div>
-        <div class="skill">Power BI <small>· Beginner</small></div>
-        <div class="skill">SQL <small>· Learning</small></div>
-        <div class="skill">Python <small>· Learning</small></div>
-        <div class="skill">Data Cleaning</div>
-        <div class="skill">Data Visualization</div>
-        <div class="skill">Exploratory Analysis</div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="section-label">04 / Get in touch</div>
-      <div class="contact">
-        <h2>Let's connect.</h2>
         <p class="section-intro">
-          Interested in data analytics, visualization, and opportunities to learn
-          through real projects.
+          Explore my work across Data Analytics and Healthcare Analytics.
+          Use the filters to find projects by domain.
         </p>
-        <a class="btn primary" href="https://github.com/manasisuryavanshi31-pixel"
-           target="_blank" rel="noopener noreferrer">Visit my GitHub ↗</a>
-      </div>
-    </section>
+
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="filter-btn" type="button"
+                  data-filter="all" aria-pressed="true">
+            All Projects
+          </button>
+          <button class="filter-btn" type="button"
+                  data-filter="data" aria-pressed="false">
+            Data Analytics
+          </button>
+          <button class="filter-btn" type="button"
+                  data-filter="health" aria-pressed="false">
+            Healthcare Analytics
+          </button>
+          <button class="filter-btn" type="button"
+                  data-filter="personal" aria-pressed="false">
+            Personal Project
+          </button>
+        </div>
+
+        <div class="grid" id="project-grid">
+
+          <article class="card" data-category="health">
+            <span class="tag">Healthcare Analytics</span>
+            <span class="tag">Excel</span>
+
+            <h3>Healthcare Data Governance & Cleaning</h3>
+
+            <p>
+              A project workbook covering healthcare data cleaning,
+              validation, a data dictionary, and an exception log.
+            </p>
+
+            <a class="project-link"
+               href="https://github.com/manasisuryavanshi31-pixel/Healthcare-Data-Governance-Cleaning-Copy"
+               target="_blank" rel="noopener noreferrer">
+              View Project on GitHub ↗
+            </a>
+          </article>
+
+          <article class="card" data-category="data">
+            <span class="tag">Data Analytics</span>
+            <span class="tag">Exploratory Analysis</span>
+
+            <h3>Data Quality & Exploratory Analysis</h3>
+
+            <p>
+              Exploring data quality, identifying potential inconsistencies,
+              and understanding patterns in a dataset.
+            </p>
+
+            <span class="tag">Project link to add</span>
+          </article>
+
+          <article class="card" data-category="data">
+            <span class="tag">Data Analytics</span>
+            <span class="tag">Power BI</span>
+
+            <h3>Business KPI Dashboard</h3>
+
+            <p>
+              A dashboard project focused on presenting business performance
+              indicators in a clear visual format.
+            </p>
+
+            <a class="project-link"
+               href="https://drive.google.com/file/d/1DOmP-QRwFDdD0dJ-yWJaCOxz3CbZ94t4/view?usp=sharing"
+               target="_blank" rel="noopener noreferrer">
+              View Business KPI Dashboard ↗
+            </a>
+          </article>
+
+          <article class="card" data-category="health">
+            <span class="tag">Healthcare Analytics</span>
+            <span class="tag">Dashboard</span>
+
+            <h3>Pharmacy Performance Dashboard</h3>
+
+            <p>
+              A project exploring pharmacy performance and data-driven
+              visual reporting.
+            </p>
+
+            <span class="tag">Project link to add</span>
+          </article>
+
+          <article class="card" data-category="data">
+            <span class="tag">Data Analytics</span>
+            <span class="tag">Power BI</span>
+
+            <h3>Student Performance Dashboard</h3>
+
+            <p>
+              A student-data visualization project designed to make
+              performance patterns easier to explore.
+            </p>
+
+            <span class="tag">Project link to add</span>
+          </article>
+
+          <article class="card" data-category="health">
+            <span class="tag">Healthcare Analytics</span>
+            <span class="tag">Exploration</span>
+
+            <h3>Adverse Event Signal Exploration</h3>
+
+            <p>
+              Exploring adverse-event data and potential patterns as part
+              of a healthcare analytics project.
+            </p>
+
+            <span class="tag">Project link to add</span>
+          </article>
+
+          <article class="card" data-category="personal">
+            <span class="tag">Personal Project</span>
+            <span class="tag">Python · Flask</span>
+
+            <h3>Secure Voting System</h3>
+
+            <p>
+              A learning prototype exploring voter login, face verification,
+              vote recording, duplicate-vote prevention, and an admin
+              dashboard. This is a project prototype, not a production-ready
+              election system.
+            </p>
+
+            <a class="project-link"
+               href="https://github.com/manasisuryavanshi31-pixel"
+               target="_blank" rel="noopener noreferrer">
+              Visit GitHub Profile ↗
+            </a>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-label">03 / My Toolkit</div>
+        <h2>Skills in Progress</h2>
+
+        <p class="section-intro">
+          These reflect my current learning level. I am continuing to
+          develop and practice each skill.
+        </p>
+
+        <div class="skills">
+          <div class="skill">Excel <small>· Practicing</small></div>
+          <div class="skill">Power BI <small>· Beginner</small></div>
+          <div class="skill">SQL <small>· Learning</small></div>
+          <div class="skill">Python <small>· Learning</small></div>
+          <div class="skill">Data Cleaning</div>
+          <div class="skill">Data Visualization</div>
+          <div class="skill">Exploratory Analysis</div>
+          <div class="skill">Dashboard Design</div>
+        </div>
+      </section>
+
+      <section id="journey">
+        <div class="section-label">04 / Learning Journey</div>
+        <h2>Learning by doing</h2>
+
+        <p class="section-intro">
+          My focus is on strengthening fundamentals through practice
+          and project-based learning.
+        </p>
+
+        <div class="journey">
+          <article class="journey-item">
+            <h3>01. Work with Data</h3>
+            <p>
+              Practice data organization, cleaning, validation, and
+              exploratory analysis.
+            </p>
+          </article>
+
+          <article class="journey-item">
+            <h3>02. Build Visuals</h3>
+            <p>
+              Develop dashboard skills using Excel and Power BI to
+              communicate insights clearly.
+            </p>
+          </article>
+
+          <article class="journey-item">
+            <h3>03. Grow Technical Skills</h3>
+            <p>
+              Continue learning SQL and Python while improving my
+              understanding of analytics workflows.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-label">05 / Connect</div>
+
+        <div class="contact">
+          <h2>Let's connect.</h2>
+
+          <p class="section-intro">
+            I am interested in learning opportunities, project collaboration,
+            and internships where I can develop my skills in data analytics.
+          </p>
+
+          <div class="buttons">
+            <a class="btn primary"
+               href="https://www.linkedin.com/in/manasi-suryavanshi-6b63b6390/"
+               target="_blank" rel="noopener noreferrer">
+              Connect on LinkedIn ↗
+            </a>
+
+            <a class="btn"
+               href="https://github.com/manasisuryavanshi31-pixel"
+               target="_blank" rel="noopener noreferrer">
+              Explore GitHub ↗
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer>
-      © 2026 Manasi Bhanudas Suryavanshi · Built with curiosity and data.
+      © 2026 Manasi Bhanudas Suryavanshi · Learning, building, improving.
     </footer>
   </div>
+
+  <script>
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll("#project-grid .card");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selectedFilter = button.dataset.filter;
+
+        filterButtons.forEach((item) => {
+          item.setAttribute(
+            "aria-pressed",
+            String(item === button)
+          );
+        });
+
+        projectCards.forEach((card) => {
+          const shouldShow =
+            selectedFilter === "all" ||
+            card.dataset.category === selectedFilter;
+
+          card.hidden = !shouldShow;
+        });
+      });
+    });
+  </script>
 </body>
 </html>
